@@ -1,6 +1,14 @@
+import React from 'react'
+
+
 function Index(props) {
+
     return (  
-        <h1>Index</h1>
+       <div>
+         <h1>Itineraries</h1>
+         <p>Itineraries list</p>
+       </div>
+
     );
 }
 
