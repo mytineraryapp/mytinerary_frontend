@@ -1,6 +1,12 @@
+import React from 'react'
+
+
 function Show(props) {
     return (  
-        <h1>Show</h1>
+       <div>
+         <h1>Itinerary Details</h1>
+         <p>Details of a specific itinerary.</p>
+       </div>
     );
 }
 
