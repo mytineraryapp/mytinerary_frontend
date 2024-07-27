@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Home from './components/Home'
 import Index from './pages/Index'
 import Show from './pages/Show'
+import Register from './components/Register'
 import './App.css'
 
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/index" element={<Index />} />
         <Route path="/show/:id" element={<Show />} />
+        <Route path="/register" element={<Register />}/>
       </Routes>
     </div>
   )
