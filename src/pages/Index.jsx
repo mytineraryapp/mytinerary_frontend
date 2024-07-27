@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import ItineraryList from '../components/ItineraryList'
 
 
 function Index(props) {
@@ -43,13 +44,7 @@ if (error) {
   return (  
        <div>
          <h1>Itineraries</h1>
-         <ul>
-        {itineraries.map(itinerary => (
-          <li key={itinerary._id}>
-            <Link to={`/show/${itinerary._id}`}>{itinerary.destination}</Link>
-          </li>
-        ))}
-      </ul>
+         <ItineraryList itineraries={itineraries} />
          
        </div>
 
