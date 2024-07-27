@@ -1,0 +1,10 @@
+.trips-container {
+    display: flex;
+    justify-content: start;
+}
+
+.link {
+    text-decoration: none;
+    color: rgb(65, 65, 65);
+    font-weight: bold;
+}
