@@ -6,17 +6,17 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../App.css";
 
-function Register() {
+function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [register, setRegister] = useState(false);
+  const [login, setLogin] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const configuration = {
       method: "post",
-      url: "https://mytinerary-backend-5vu5.onrender.com/user/register",
+      url: "https://mytinerary-backend-5vu5.onrender.com/user/login",
       data: {
         email,
         password,
@@ -24,7 +24,7 @@ function Register() {
     };
     axios(configuration)
       .then((result) => {
-        setRegister(true);
+        setLogin(true);
       })
       .catch((error) => {
         error = new Error();
@@ -32,14 +32,14 @@ function Register() {
   };
 
   React.useEffect(() => {
-    if (register) {
-      navigate("/login");
+    if (login) {
+      navigate("/");
     }
-  }, [register, navigate]);
+  }, [login, navigate]);
 
   return (
     <div className="userForm">
-      <h3>Sign Up</h3>
+      <h3>Log in</h3>
       <Form onSubmit={(e) => handleSubmit(e)}>
         <Form.Group controlId="formBasicEmail" className="formLabel">
           <Form.Label>Email address</Form.Label>
@@ -48,7 +48,7 @@ function Register() {
             name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter email"
+            placeholder="Enter your email"
           />
         </Form.Group>
 
@@ -59,18 +59,18 @@ function Register() {
             name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Enter password"
+            placeholder="Enter your password"
           />
         </Form.Group>
 
         <Button variant="primary" type="submit" className="userButton">
-          Sign Up
+          Log In
         </Button>
       </Form>
-      <p className="alternateLink">Already have an account?</p>
-      <Link to={"/login"}>Log in</Link>
+      <p className="alternateLink">Don't have an account?</p>
+      <Link to={"/register"}>Sign up</Link>
     </div>
   );
 }
 
-export default Register;
+export default Login;

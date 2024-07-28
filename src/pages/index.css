@@ -1,6 +1,9 @@
 .trips-container {
     display: flex;
     justify-content: start;
+    flex-wrap: wrap;
+    padding: 25px;
+    margin: 0 auto;
 }
 
 .link {

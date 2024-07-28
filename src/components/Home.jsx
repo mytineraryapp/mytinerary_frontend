@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Index from "../pages/Index";
+import TripForm from "./TripForm";
 import Show from "../pages/Show";
 import Register from "./Register";
-import "../App.css"
+import "../App.css";
+import Login from "./Login";
 
 function Home(props) {
   const [trips, setTrips] = useState(null);
@@ -34,12 +36,14 @@ function Home(props) {
   return (
     <main>
       <Routes>
-        <Route
-          path="/trips"
-          element={<Index trips={trips} createTrips={createTrips} />}
-        />
+        <Route path="/trips" element={<Index trips={trips} />} />
         <Route path="/trips/:id" element={<Show />} />
-        <Route path="/register" element={<Register />}/>
+        <Route
+          path="/trips/add"
+          element={<TripForm createTrips={createTrips} />}
+        />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </main>
   );
