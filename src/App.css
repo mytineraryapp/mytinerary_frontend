@@ -44,7 +44,7 @@
   color: #888;
 }
 
-.register {
+.userForm {
   background-color: #e2efff;
   border-radius: 12px;
   display: flex;
@@ -59,6 +59,11 @@
   font-weight: bold;
 }
 
-.signUpButton {
+.userButton {
   margin-top: 12px;
+}
+
+.alternateLink {
+  margin-top: 12px;
+  margin-bottom: -2px;
 }

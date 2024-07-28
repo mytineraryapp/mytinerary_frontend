@@ -1,10 +1,11 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "../App.css"
 
 function Register() {
   return (
-    <div className="register">
+    <div className="userForm">
       <h3>Sign Up</h3>
       <Form>
         <Form.Group controlId="formBasicFirstName" className="formLabel">
@@ -31,6 +32,8 @@ function Register() {
           Sign Up
         </Button>
       </Form>
+      <p className="alternateLink">Already have an account?</p>
+      <Link to={"/login"}>Log in</Link>
     </div>
   );
 }
