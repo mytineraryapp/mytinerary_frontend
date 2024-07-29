@@ -6,6 +6,7 @@ import "./index.css";
 import "../App.css";
 
 const Index = (props) => {
+  console.log("Trips:", props.trips);
   const loaded = () => (
     <div className="trips-container">
       {props.trips.map((trip) => (
@@ -29,7 +30,6 @@ const Index = (props) => {
         <Card.Body>
           <Link to={`/trips/add`} className="link">
             <i class="fa-solid fa-circle-plus"></i>
-            <h3>Add</h3>
           </Link>
         </Card.Body>
       </Card>
