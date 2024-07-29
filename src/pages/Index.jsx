@@ -37,7 +37,7 @@ const Index = (props) => {
   );
 
   const loading = () => (
-    <Spinner animation="grow" role="status">
+    <Spinner animation="border" variant="primary" role="status">
       <span className="visually-hidden">Loading...</span>
     </Spinner>
   );
