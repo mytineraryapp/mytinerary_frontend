@@ -1,76 +1,100 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Form, Button } from "react-bootstrap";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import "../App.css";
 
 const TripForm = (props) => {
   const [newForm, setNewForm] = useState({
     destination: "",
-    startMonth: "",
-    startDay: "",
-    endMonth: "",
-    endDay: "",
+    startDate: null,
+    endDate: null,
   });
 
   const navigate = useNavigate();
 
   const handleChange = (event) => {
-    setNewForm({ ...newForm, [event.target.name]: event.target.value });
+    const { name, value } = event.target;
+    setNewForm({ ...newForm, [name]: value });
+  };
+
+  const handleDateChange = (date, field) => {
+    setNewForm({ ...newForm, [field]: date });
+  };
+
+  const formatDate = (date) => {
+    if (!date) return { month: "", day: "" };
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    return { month, day };
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.createTrips(newForm);
+
+    const { startDate, endDate } = newForm;
+    const formattedStart = formatDate(startDate);
+    const formattedEnd = formatDate(endDate);
+
+    const formattedForm = {
+      destination: newForm.destination,
+      startMonth: formattedStart.month,
+      startDay: formattedStart.day,
+      endMonth: formattedEnd.month,
+      endDay: formattedEnd.day,
+    };
+
+    props.createTrips(formattedForm);
+
     setNewForm({
       destination: "",
-      startMonth: "",
-      startDay: "",
-      endMonth: "",
-      endDay: "",
+      startDate: null,
+      endDate: null,
     });
+
     navigate("/trips");
   };
 
   return (
-    <section>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={newForm.destination}
-          name="destination"
-          placeholder="Destination"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          value={newForm.startMonth}
-          name="startMonth"
-          placeholder="Start Month"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          value={newForm.startDay}
-          name="startDay"
-          placeholder="Start Day"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          value={newForm.endMonth}
-          name="endMonth"
-          placeholder="End Month"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          value={newForm.endDay}
-          name="endDay"
-          placeholder="End Day"
-          onChange={handleChange}
-        />
-        <input type="submit" value="Create Trip" />
-      </form>
-    </section>
+    <div className="tripForm">
+      <h3>Add a Trip</h3>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group controlId="formDestination">
+          <Form.Control
+            type="text"
+            name="destination"
+            value={newForm.destination}
+            onChange={handleChange}
+            placeholder="Destination"
+          />
+        </Form.Group>
+
+        <Form.Group controlId="formStartDate">
+          <DatePicker
+            selected={newForm.startDate}
+            onChange={(date) => handleDateChange(date, 'startDate')}
+            dateFormat="MM/dd/yyyy"
+            className="form-control"
+            placeholderText="Start Date"
+          />
+        </Form.Group>
+
+        <Form.Group controlId="formEndDate">
+          <DatePicker
+            selected={newForm.endDate}
+            onChange={(date) => handleDateChange(date, 'endDate')}
+            dateFormat="MM/dd/yyyy"
+            className="form-control"
+            placeholderText="End Date"
+          />
+        </Form.Group>
+
+        <Button variant="primary" type="submit" className="userButton">
+          Add
+        </Button>
+      </Form>
+    </div>
   );
 };
 

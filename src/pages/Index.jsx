@@ -6,6 +6,7 @@ import "./index.css";
 import "../App.css";
 
 const Index = (props) => {
+  console.log("Trips:", props.trips);
   const loaded = () => (
     <div className="trips-container">
       {props.trips.map((trip) => (
@@ -17,7 +18,7 @@ const Index = (props) => {
                   <h1>{trip.destination}</h1>
                 </Link>
               </Card.Title>
-              <Card.Text>
+              <Card.Text className="date">
                 {trip.startMonth}/{trip.startDay} - {trip.endMonth}/
                 {trip.endDay}
               </Card.Text>
@@ -27,9 +28,8 @@ const Index = (props) => {
       ))}
       <Card style={{width: "15rem", height: "12rem" }} className="trip">
         <Card.Body>
-          <Link to={`/trips/add`} className="link">
-            <i class="fa-solid fa-circle-plus"></i>
-            <h3>Add</h3>
+          <Link to={`/trips/add`}>
+            <i class="fa-solid fa-circle-plus fa-2xl"></i>
           </Link>
         </Card.Body>
       </Card>
@@ -37,7 +37,7 @@ const Index = (props) => {
   );
 
   const loading = () => (
-    <Spinner animation="grow" role="status">
+    <Spinner animation="border" variant="primary" role="status">
       <span className="visually-hidden">Loading...</span>
     </Spinner>
   );
