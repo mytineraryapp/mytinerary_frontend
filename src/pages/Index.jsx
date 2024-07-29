@@ -18,7 +18,7 @@ const Index = (props) => {
                   <h1>{trip.destination}</h1>
                 </Link>
               </Card.Title>
-              <Card.Text>
+              <Card.Text className="date">
                 {trip.startMonth}/{trip.startDay} - {trip.endMonth}/
                 {trip.endDay}
               </Card.Text>
@@ -28,8 +28,8 @@ const Index = (props) => {
       ))}
       <Card style={{width: "15rem", height: "12rem" }} className="trip">
         <Card.Body>
-          <Link to={`/trips/add`} className="link">
-            <i class="fa-solid fa-circle-plus"></i>
+          <Link to={`/trips/add`}>
+            <i class="fa-solid fa-circle-plus fa-2xl"></i>
           </Link>
         </Card.Body>
       </Card>
