@@ -9,4 +9,24 @@
 .card {
     padding: 1em;
     margin: 20px;
-  }
+}
+
+.showPage {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    place-items: center;
+    width: 90vw;
+}
+
+.trips {
+    grid-column-start: 1;
+
+}
+
+.slideShow {
+    grid-column-start: 2;
+    border: 1px solid rgb(92, 92, 92);
+    width: 200px;
+    height: 400px;
+}
+

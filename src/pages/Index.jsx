@@ -29,7 +29,7 @@ const Index = (props) => {
       <Card style={{width: "15rem", height: "12rem" }} className="trip">
         <Card.Body>
           <Link to={`/trips/add`}>
-            <i class="fa-solid fa-circle-plus fa-2xl"></i>
+            <i className="fa-solid fa-circle-plus fa-2xl"></i>
           </Link>
         </Card.Body>
       </Card>
