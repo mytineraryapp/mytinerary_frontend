@@ -1,4 +1,4 @@
-.trips-container {
+.trips-container, .activities-container {
     display: flex;
     justify-content: start;
     flex-wrap: wrap;
@@ -11,23 +11,33 @@
     margin: 20px;
 }
 
+.trip {
+    align-content: center;
+}
+
 .showPage {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    place-items: center;
+    grid-template-rows: 300px auto;
     width: 90vw;
 }
 
 .slideShow {
     grid-column-start: 2;
+    grid-row-start: 1 span 3;
     border: 1px solid rgb(219, 219, 219);
     border-radius: 10px;
-    width: 250px;
-    height: calc(100% + 25px)
+    width: 90%;
+    height: calc(150%);
 }
 
 .slideShowItem {
     padding: 30px;
+}
+
+.activities-container {
+    grid-column-start: 1 span 2;
+    grid-row-start: 2;
 }
 
 .carousel-control-prev-icon, .carousel-control-next-icon, .carousel-indicators {
