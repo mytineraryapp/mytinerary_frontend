@@ -10,7 +10,9 @@ function Trips() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+
   const URL = "https://mytinerary-backend-5vu5.onrender.com/trips";
+
 
   const getTrips = async () => {
     try {
@@ -23,6 +25,7 @@ function Trips() {
       setLoading(false);
     }
   };
+
 
   const createTrips = async (trip) => {
     await fetch(URL, {
