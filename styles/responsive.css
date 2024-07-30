@@ -1,0 +1,30 @@
+
+@media (max-width: 768px) {
+    .component {
+        padding: 10px;
+    }
+    
+    .button {
+        padding: 8px 16px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .component {
+        padding: 15px;
+    }
+    
+    .button {
+        padding: 12px 24px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .component {
+        padding: 20px;
+    }
+    
+    .button {
+        padding: 15px 30px;
+    }
+}
