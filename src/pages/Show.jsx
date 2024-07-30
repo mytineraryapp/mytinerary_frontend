@@ -1,11 +1,13 @@
+
 import { useParams } from "react-router-dom";
 import ToDo from "../components/ToDo";
 
+
 const Show = (props) => {
-    const params = useParams()
-    const id = params.id;
-    const trips = props.trips;
-    const trip = trips.find((t) => t._id === id)
+  const params = useParams()
+  const id = params.id;
+  const trips = props.trips;
+  const trip = trips.find((trip) => trip._id === id);
 
     return (
         <div className="showPage">
@@ -18,4 +20,5 @@ const Show = (props) => {
     )
 }
 
-export default Show
+
+export default Show;

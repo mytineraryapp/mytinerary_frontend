@@ -6,7 +6,6 @@ import "./index.css";
 import "../App.css";
 
 const Index = (props) => {
-  console.log("Trips:", props.trips);
   const loaded = () => (
     <div className="trips-container">
       {props.trips.map((trip) => (
