@@ -18,15 +18,18 @@
     width: 90vw;
 }
 
-.trips {
-    grid-column-start: 1;
-
-}
-
 .slideShow {
     grid-column-start: 2;
-    border: 1px solid rgb(92, 92, 92);
-    width: 200px;
-    height: 400px;
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 10px;
+    width: 250px;
+    height: calc(100% + 25px)
 }
 
+.slideShowItem {
+    padding: 30px;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon, .carousel-indicators {
+    background-color: rgb(219, 219, 219);
+}
