@@ -20,7 +20,7 @@ function Trips() {
       const data = await response.json();
       setTrips(data.data);
     } catch (err) {
-      setError("Failed to fetch trips.");
+      setError("Failed to load page.");
     } finally {
       setLoading(false);
     }
@@ -71,7 +71,7 @@ function Trips() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Index trips={trips} />} />
+        <Route path="/" element={<Index trips={trips} deleteTrip={deleteTrip}/>} />
         <Route path="add" element={<TripForm createTrips={createTrips} />} />
         <Route
           path="/:id"

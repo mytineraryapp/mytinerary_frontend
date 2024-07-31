@@ -1,18 +1,18 @@
 .trips-container, .activities-container {
     display: flex;
-    justify-content: start;
     flex-wrap: wrap;
-    padding: 25px;
-    margin: 0 auto;
-}
-
-.trips-container {
-    padding-top: 225px;
+    justify-content: center;
+    padding-top: 35px;
+    height: 100vh;
 }
 
 .card {
     padding: 1em;
     margin: 20px;
+}
+
+.delete {
+    color: rgb(77, 127, 255);
 }
 
 .trip {

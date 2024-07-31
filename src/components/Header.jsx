@@ -3,7 +3,7 @@ import "../App.css"
 
 function Header() {
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" fixed="top">
+    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary navbar" fixed="top">
       <Container>
         <Navbar.Brand href="/">MyTinerary</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
