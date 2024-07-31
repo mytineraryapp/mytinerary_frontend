@@ -4,6 +4,11 @@
   padding: 2rem;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  padding-top: 100px;
 }
 
 
@@ -38,3 +43,48 @@
   margin-top: 12px;
   margin-bottom: -2px;
 }
+
+.go {
+  margin-top: 12px;
+}
+
+.footerContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 275px;
+}
+
+.socialLink {
+  color: rgb(188, 188, 188);
+  margin: 5px;
+}
+
+.socialLink:active {
+  color: rgb(188, 188, 188);
+  margin: 5px;
+}
+
+.name, .position {
+  font-size: 13px;
+  font-weight: bold;
+  color: rgb(180, 180, 180);;
+}
+
+.position {
+  color: rgb(187, 187, 187);
+  font-style: italic;
+  font-weight: lighter;
+}
+
+.member {
+  line-height: 16px;
+  margin: 0px 25px 0px 25px;
+}
+
+.links {
+  margin-top: 6px;
+}
+
+
