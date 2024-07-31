@@ -3,40 +3,88 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  padding-top: 100px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+.userForm{
+  background-color: #e2efff;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 25px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tripForm {
+  background-color: #e2efff;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.formLabel {
+  text-align: left;
+  margin: 10px;
+  font-weight: bold;
 }
 
-.card {
-  padding: 2em;
+.userButton {
+  margin-top: 12px;
 }
 
-.read-the-docs {
-  color: #888;
+.alternateLink {
+  margin-top: 12px;
+  margin-bottom: -2px;
 }
+
+.go {
+  margin-top: 12px;
+}
+
+.footerContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 275px;
+}
+
+.socialLink {
+  color: rgb(188, 188, 188);
+  margin: 5px;
+}
+
+.socialLink:active {
+  color: rgb(188, 188, 188);
+  margin: 5px;
+}
+
+.name, .position {
+  font-size: 13px;
+  font-weight: bold;
+  color: rgb(180, 180, 180);;
+}
+
+.position {
+  color: rgb(187, 187, 187);
+  font-style: italic;
+  font-weight: lighter;
+}
+
+.member {
+  line-height: 16px;
+  margin: 0px 25px 0px 25px;
+}
+
+.links {
+  margin-top: 6px;
+}
+
+
