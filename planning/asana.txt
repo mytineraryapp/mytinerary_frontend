@@ -1,0 +1,11 @@
+Backend development progress
+michelle.oberg22@gmail.com initiated the backend development by creating trips models and CRUD routes, as well as activities models and CRUD routes. Both tasks were subsequently marked as complete by 
+nthconnor@gmail.com. Additionally, 
+nthconnor@gmail.com implemented user authentication for the project, completing this task on July 27.
+Frontend development and routing
+Abel Meseret made significant progress on the frontend by setting up routing with React Router, creating components for pages, and implementing page content. All of these tasks were completed by July 27. 
+nthconnor@gmail.com complemented this work by implementing user authentication on the frontend, completing this task on July 29.
+Project milestones and ongoing tasks
+The project reached a significant milestone as 
+nthconnor@gmail.com marked the MVP as complete on July 29. The next major milestone, project deployment, is scheduled for July 31. Currently, 
+Abel Meseret is working on testing the application and styling, both of which are in progress.

@@ -1,56 +1,32 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import "../App.css";
 
 const TripForm = (props) => {
   const [newForm, setNewForm] = useState({
     destination: "",
-    startDate: null,
-    endDate: null,
+    startMonth: "",
+    startDay: "",
+    endMonth: "",
+    endDay: "",
   });
 
   const navigate = useNavigate();
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
-    setNewForm({ ...newForm, [name]: value });
-  };
-
-  const handleDateChange = (date, field) => {
-    setNewForm({ ...newForm, [field]: date });
-  };
-
-  const formatDate = (date) => {
-    if (!date) return { month: "", day: "" };
-    const month = (date.getMonth() + 1).toString().padStart(2, '0');
-    const day = date.getDate().toString().padStart(2, '0');
-    return { month, day };
+    setNewForm({ ...newForm, [event.target.name]: event.target.value });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    const { startDate, endDate } = newForm;
-    const formattedStart = formatDate(startDate);
-    const formattedEnd = formatDate(endDate);
-
-    const formattedForm = {
-      destination: newForm.destination,
-      startMonth: formattedStart.month,
-      startDay: formattedStart.day,
-      endMonth: formattedEnd.month,
-      endDay: formattedEnd.day,
-    };
-
-    props.createTrips(formattedForm);
-
+    props.createTrips(newForm);
     setNewForm({
       destination: "",
-      startDate: null,
-      endDate: null,
+      startMonth: "",
+      startDay: "",
+      endMonth: "",
+      endDay: "",
     });
 
     navigate("/trips");
@@ -70,23 +46,43 @@ const TripForm = (props) => {
           />
         </Form.Group>
 
-        <Form.Group controlId="formStartDate">
-          <DatePicker
-            selected={newForm.startDate}
-            onChange={(date) => handleDateChange(date, 'startDate')}
-            dateFormat="MM/dd/yyyy"
-            className="form-control"
-            placeholderText="Start Date"
+        <Form.Group controlId="formStartMonth">
+          <Form.Control
+            type="number"
+            name="startMonth"
+            value={newForm.startMonth}
+            onChange={handleChange}
+            placeholder="Start Month"
           />
         </Form.Group>
 
-        <Form.Group controlId="formEndDate">
-          <DatePicker
-            selected={newForm.endDate}
-            onChange={(date) => handleDateChange(date, 'endDate')}
-            dateFormat="MM/dd/yyyy"
-            className="form-control"
-            placeholderText="End Date"
+        <Form.Group controlId="formStartDay">
+          <Form.Control
+            type="number"
+            name="startDay"
+            value={newForm.startDay}
+            onChange={handleChange}
+            placeholder="Start Day"
+          />
+        </Form.Group>
+
+        <Form.Group controlId="formEndMonth">
+          <Form.Control
+            type="number"
+            name="endMonth"
+            value={newForm.endMonth}
+            onChange={handleChange}
+            placeholder="End Month"
+          />
+        </Form.Group>
+
+        <Form.Group controlId="formEndDay">
+          <Form.Control
+            type="number"
+            name="endDay"
+            value={newForm.endDay}
+            onChange={handleChange}
+            placeholder="End Day"
           />
         </Form.Group>
 
