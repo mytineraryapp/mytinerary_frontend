@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { Spinner } from "react-bootstrap";
-import { Button, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 
 function Activities(props) {

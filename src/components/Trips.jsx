@@ -29,7 +29,7 @@ function Trips() {
 
   const createTrips = async (trip) => {
     await fetch(URL, {
-      method: "post",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
