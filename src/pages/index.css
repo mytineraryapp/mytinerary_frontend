@@ -6,6 +6,10 @@
     margin: 0 auto;
 }
 
+.trips-container {
+    padding-top: 225px;
+}
+
 .card {
     padding: 1em;
     margin: 20px;

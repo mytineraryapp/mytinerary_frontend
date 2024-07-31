@@ -1,12 +1,12 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Spinner } from "react-bootstrap";
-import { Button, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import "./index.css";
 import "../App.css";
 
 const Index = (props) => {
   const loaded = () => (
+    <main>
     <div className="trips-container">
       {props.trips.map((trip) => (
         <div key={trip._id}>
@@ -33,6 +33,7 @@ const Index = (props) => {
         </Card.Body>
       </Card>
     </div>
+    </main>
   );
 
   const loading = () => (
