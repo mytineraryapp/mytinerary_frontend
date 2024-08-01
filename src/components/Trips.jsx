@@ -39,18 +39,14 @@ function Trips() {
   };
 
   const updateTrip = async (trip, id) => {
-    try{
-      await fetch(`${URL}/${id}`, {
-        method: "PUT",
-         headers: {
+    await fetch(`${URL}/${id}`, {
+      method: "PUT",
+      headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(trip),
     });
     getTrips();
-    } catch (error) {
-      console.error("Error updating trip:", error);
-    }
   };
 
   const deleteTrip = async (id) => {
