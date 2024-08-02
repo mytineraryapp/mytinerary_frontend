@@ -6,6 +6,9 @@ import Show from "./pages/Show";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Trips from "./components/Trips";
+//-------------------------------------------
+import TripEditPage from "./components/TripEditPage";
+//-----------------------------------------
 
 function App() {
   return (
@@ -16,6 +19,8 @@ function App() {
         <Route path="/trips/*" element={<Trips />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/trips/add" element={<TripEditPage />} /> //------------//
+        <Route path="/trips/:id" element={<TripEditPage />} />  //------------//
       </Routes>
     </div>
   );
