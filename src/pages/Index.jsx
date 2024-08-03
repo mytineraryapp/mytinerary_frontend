@@ -11,6 +11,7 @@ const Index = (props) => {
     e.preventDefault();
     props.deleteTrip(trip);
     navigate("/trips");
+    console.log(props);
   };
   const loaded = () => (
     <main>
@@ -31,6 +32,9 @@ const Index = (props) => {
                 <Button variant="none" onClick={(e) => removeTrip(e, trip._id)}>
                   <i className="fa-solid fa-square-minus delete"></i>
                 </Button>
+                <Link to={`/trips/edit/${trip._id}`}>
+                  <i className="fa-solid fa-pen-to-square"></i>
+                </Link>
               </Card.Body>
             </Card>
           </div>
