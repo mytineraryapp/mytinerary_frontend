@@ -4,15 +4,14 @@ import { Spinner } from "react-bootstrap";
 import Index from "../pages/Index";
 import TripForm from "../components/TripForm";
 import Show from "../pages/Show";
+import EditTrip from "./EditTrip";
 
 function Trips() {
   const [trips, setTrips] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-
   const URL = "https://mytinerary-backend-5vu5.onrender.com/trips";
-
 
   const getTrips = async () => {
     try {
@@ -25,7 +24,6 @@ function Trips() {
       setLoading(false);
     }
   };
-
 
   const createTrips = async (trip) => {
     await fetch(URL, {
@@ -71,7 +69,10 @@ function Trips() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Index trips={trips} deleteTrip={deleteTrip}/>} />
+        <Route
+          path="/"
+          element={<Index trips={trips} deleteTrip={deleteTrip} />}
+        />
         <Route path="add" element={<TripForm createTrips={createTrips} />} />
         <Route
           path="/:id"
@@ -82,6 +83,10 @@ function Trips() {
               deleteTrip={deleteTrip}
             />
           }
+        />
+        <Route
+          path="/edit/:id"
+          element={<EditTrip updateTrip={updateTrip} />}
         />
       </Routes>
     </div>
